@@ -110,7 +110,7 @@
     _CdLabel.hidden =YES;
     
     secondsCountDown =0;
-    [_CdLabel setFont:[UIFont systemFontOfSize:400.f]];
+    [_CdLabel setFont:[UIFont systemFontOfSize:300.f]];
     _CdDatePicker.hidden=YES;
     
     _T1.delegate=self;
