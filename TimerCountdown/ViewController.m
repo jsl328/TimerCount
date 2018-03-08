@@ -42,10 +42,16 @@
         _CdLabel.hidden=YES;
         _CdDatePicker.hidden=YES;
         [_CdCountDown setTitle:@"开始计时" forState:UIControlStateNormal];
+        secondsCountDown=[_T1.text intValue];
         [_countDownTimer invalidate];
         _countDownTimer =nil;
         _T1.hidden =_T2.hidden =NO;
+        [_CdLabel setTextColor:[UIColor whiteColor]];
+        [_CdLabel setText:[self countdownCent:secondsCountDown]];
     }else if ([sender isEqual:_CdCountDown]){
+        if (secondsCountDown==0||downCount==0||[_T1.text intValue]<[_T2.text intValue]) {
+            return;
+        }
         //开始计时按钮
         _T1.hidden =_T2.hidden =YES;
         [_T1 resignFirstResponder];
@@ -54,9 +60,6 @@
         _CdLabel.hidden=NO;
         NSLog(@"开始计时按钮");
         if ([_CdCountDown.titleLabel.text isEqualToString:@"开始计时"]) {
-            if (secondsCountDown==0) {
-                return;
-            }
             [_CdCountDown setTitle:@"暂停" forState:UIControlStateNormal];
             //设置定时器
             _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownAction) userInfo:nil repeats:YES];
@@ -80,7 +83,10 @@
         totalCount =[textField.text intValue];
     }
     if ([textField isEqual:_T2]) {
-        downCount =[textField.text intValue];
+        if (totalCount<[textField.text intValue]) {
+            return;
+        }
+        downCount =totalCount-[textField.text intValue];
     }
     
     secondsCountDown =totalCount;
@@ -90,13 +96,12 @@
 -(NSString *)countdownCent:(int )secondsCountDown
 {
     //设置倒计时显示的时间
-    NSString *str_hour = [NSString stringWithFormat:@"%ld",(long)secondsCountDown/3600];//时
-    NSString *str_minute = [NSString stringWithFormat:@"%ld",(long)(secondsCountDown%3600)/60];//分
-    NSString *str_second = [NSString stringWithFormat:@"%ld",(long)secondsCountDown%60];//秒
-    NSString *format_time = [NSString stringWithFormat:@"%@:%@:%@",str_hour,str_minute,str_second];
+    //NSString *str_hour = [NSString stringWithFormat:@"%ld",(long)secondsCountDown/3600];//时
+    NSString *str_minute = [NSString stringWithFormat:@"%02d",(secondsCountDown%3600)/60];//分
+    NSString *str_second = [NSString stringWithFormat:@"%02d",secondsCountDown%60];//秒
+    NSString *format_time = [NSString stringWithFormat:@"%@:%@",str_minute,str_second];
 //    self.timeLbl.text = [NSString stringWithFormat:@"倒计时   %@",format_time];
-    
-    return [NSString stringWithFormat:@"%@",format_time];
+    return format_time;
 }
 
 - (void)viewDidLoad {
@@ -104,33 +109,8 @@
     _CdFinishedBtn.enabled=NO;
     _CdLabel.hidden =YES;
     
-    //设置地区: zh-中国
-    /*_CdDatePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh"];
-    _CdDatePicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_ch"];
-    // 设置时区，中国在东八区
-    _CdDatePicker.timeZone = [NSTimeZone timeZoneWithName:@"GTM+8"];
-    //UIDatePicker时间范围限制
-    NSDate *maxDate = [[NSDate alloc]initWithTimeIntervalSinceNow:24*60*60];
-    _CdDatePicker.maximumDate = maxDate;
-    NSDate *minDate = [NSDate date];
-    _CdDatePicker.minimumDate = minDate;
-     
-    
-    _CdLabel.hour =0;
-    _CdLabel.minute=0;
-    _CdLabel.second=10;
-    [_CdLabel removeFromSuperview];
-     
-    
-    TimeLable *tl =[[TimeLable alloc]initWithFrame:CGRectMake(50, 100, 400, 40)];
-    tl.hour=0;
-    tl.minute =0;
-    tl.second =10;
-    [self.view addSubview:tl];
-    */
-    
     secondsCountDown =0;
-    [_CdLabel setFont:[UIFont systemFontOfSize:200.f]];
+    [_CdLabel setFont:[UIFont systemFontOfSize:400.f]];
     _CdDatePicker.hidden=YES;
     
     _T1.delegate=self;
@@ -148,6 +128,12 @@
     if(_CdDatePicker!=nil) {
        [_CdDatePicker addTarget:self action:@selector(dateChange:) forControlEvents:UIControlEventValueChanged];
     }
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [_T1 resignFirstResponder];
+    [_T2 resignFirstResponder];
 }
 
 -(void)playBackgroundMusic:(NSString *)flag{
@@ -186,9 +172,9 @@
     
     //重新计算 时/分/秒
     //NSString *str_hour = [NSString stringWithFormat:@"%02d",secondsCountDown/3600];
-    NSString *str_minute = [NSString stringWithFormat:@"%02d",(secondsCountDown%3600)/60];
-    NSString *str_second = [NSString stringWithFormat:@"%02d",secondsCountDown%60];
-    NSString *format_time=[NSString stringWithFormat:@"%@:%@",str_minute,str_second];
+    //NSString *str_minute = [NSString stringWithFormat:@"%02d",(secondsCountDown%3600)/60];
+    //NSString *str_second = [NSString stringWithFormat:@"%02d",secondsCountDown%60];
+    //NSString *format_time=[NSString stringWithFormat:@"%@:%@",str_minute,str_second];
     
     if(secondsCountDown==0){
         _CdLabel.hidden =YES;
@@ -202,7 +188,7 @@
     }
     
     //修改倒计时标签及显示内容
-    _CdLabel.text =format_time;
+    _CdLabel.text =[self countdownCent:secondsCountDown];
     _CdDatePicker.hidden=YES;
 }
 
