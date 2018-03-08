@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zjg-aK-OZG">
+                                <rect key="frame" x="24" y="90" width="335" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="YU6-TB-Dkc"/>
+                                    <constraint firstAttribute="height" constant="216" id="kXm-Gq-NgW"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="542081825.84540606">
+                                    <!--2018-03-07 02:17:05 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="zh"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNI-Wa-yH2">
+                                <rect key="frame" x="24" y="90" width="335" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="cOk-nR-TIb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="116"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="总计时(秒)小于3600" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uqy-oe-bhv">
+                                <rect key="frame" x="53" y="120" width="269" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="V3H-gU-S3p"/>
+                                    <constraint firstAttribute="width" constant="269" id="eLp-0H-y6J"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTY-0A-bhG">
+                                <rect key="frame" x="24" y="527" width="114" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="Omz-qH-Nc1"/>
+                                    <constraint firstAttribute="height" constant="95" id="s0X-Uq-mWw"/>
+                                </constraints>
+                                <state key="normal" title="完成">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="BtnoOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcp-CP-tdL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsw-MU-I5a">
+                                <rect key="frame" x="245" y="527" width="114" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="OI7-1a-ctT"/>
+                                    <constraint firstAttribute="height" constant="95" id="SE3-xj-Dj7"/>
+                                </constraints>
+                                <state key="normal" title="开始计时">
+                                    <color key="titleColor" red="0.53086406285677845" green="1" blue="0.35027260743085886" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="BtnoOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0fq-Vn-oTn"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="第一次响铃时间" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SoV-J1-C35">
+                                <rect key="frame" x="53" y="315" width="269" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="dsr-dj-0Pu"/>
+                                    <constraint firstAttribute="width" constant="269" id="erR-0z-BJC"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28586463730569944" green="0.28586463730569944" blue="0.28586463730569944" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bTY-0A-bhG" secondAttribute="bottom" constant="45" id="1RM-Sz-2kE"/>
+                            <constraint firstItem="SoV-J1-C35" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="8AN-0u-uac"/>
+                            <constraint firstItem="SoV-J1-C35" firstAttribute="top" secondItem="Uqy-oe-bhv" secondAttribute="bottom" constant="100" id="MAc-FA-6RT"/>
+                            <constraint firstItem="SoV-J1-C35" firstAttribute="leading" secondItem="Uqy-oe-bhv" secondAttribute="leading" id="MwS-zH-Sqv"/>
+                            <constraint firstItem="bTY-0A-bhG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="MzZ-4R-tdX"/>
+                            <constraint firstItem="zNI-Wa-yH2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="V5j-WG-b5p"/>
+                            <constraint firstItem="Nsw-MU-I5a" firstAttribute="top" secondItem="zNI-Wa-yH2" secondAttribute="bottom" constant="137" id="VJx-y0-g96"/>
+                            <constraint firstItem="Uqy-oe-bhv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="Ya8-yl-ZoZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SoV-J1-C35" secondAttribute="trailing" constant="53" id="cAz-nT-UAz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zNI-Wa-yH2" secondAttribute="trailing" constant="16" id="ckg-YT-X6o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nsw-MU-I5a" secondAttribute="bottom" constant="45" id="hRg-zO-rZy"/>
+                            <constraint firstItem="zNI-Wa-yH2" firstAttribute="trailing" secondItem="zjg-aK-OZG" secondAttribute="trailing" id="ldc-kh-Jx1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nsw-MU-I5a" secondAttribute="trailing" constant="16" id="pcx-Za-G1S"/>
+                            <constraint firstItem="SoV-J1-C35" firstAttribute="trailing" secondItem="Uqy-oe-bhv" secondAttribute="trailing" id="sQA-zU-bot"/>
+                            <constraint firstItem="zNI-Wa-yH2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="uZr-Gq-T7m"/>
+                            <constraint firstItem="Uqy-oe-bhv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="ubt-gw-Jmq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uqy-oe-bhv" secondAttribute="trailing" constant="53" id="uoa-EQ-EqJ"/>
+                            <constraint firstItem="zjg-aK-OZG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="vzD-0H-WId"/>
+                            <constraint firstItem="bTY-0A-bhG" firstAttribute="top" secondItem="zNI-Wa-yH2" secondAttribute="bottom" constant="137" id="wr5-4B-Wxy"/>
+                            <constraint firstItem="zNI-Wa-yH2" firstAttribute="leading" secondItem="zjg-aK-OZG" secondAttribute="leading" id="zDG-o6-h0w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="CdCountDown" destination="Nsw-MU-I5a" id="U4p-An-M98"/>
+                        <outlet property="CdDatePicker" destination="zjg-aK-OZG" id="Hwy-uP-fXM"/>
+                        <outlet property="CdFinishedBtn" destination="bTY-0A-bhG" id="9Xr-RR-hlI"/>
+                        <outlet property="CdLabel" destination="zNI-Wa-yH2" id="iek-bd-Vcf"/>
+                        <outlet property="T1" destination="Uqy-oe-bhv" id="xtE-Xa-O7X"/>
+                        <outlet property="T2" destination="SoV-J1-C35" id="CUx-LG-oSt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263.19999999999999" y="23.838080959520241"/>
+        </scene>
+    </scenes>
+</document>
