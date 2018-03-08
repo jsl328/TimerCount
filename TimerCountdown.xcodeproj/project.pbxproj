@@ -13,6 +13,8 @@
 		671C4144204F82F8005AA51D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 671C4143204F82F8005AA51D /* Assets.xcassets */; };
 		671C4147204F82F8005AA51D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 671C4145204F82F8005AA51D /* LaunchScreen.storyboard */; };
 		671C414A204F82F8005AA51D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C4149204F82F8005AA51D /* main.m */; };
+		671C4152204F8DF3005AA51D /* TimeLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C4151204F8DF3005AA51D /* TimeLable.m */; };
+		6735B0DB204FDCBB00B1C342 /* didi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6735B0DA204FDCBB00B1C342 /* didi.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		671C4146204F82F8005AA51D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		671C4148204F82F8005AA51D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		671C4149204F82F8005AA51D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		671C4150204F8DF3005AA51D /* TimeLable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeLable.h; sourceTree = "<group>"; };
+		671C4151204F8DF3005AA51D /* TimeLable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeLable.m; sourceTree = "<group>"; };
+		6735B0DA204FDCBB00B1C342 /* didi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = didi.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,7 @@
 		671C412E204F82F8005AA51D = {
 			isa = PBXGroup;
 			children = (
+				6735B0DA204FDCBB00B1C342 /* didi.mp3 */,
 				671C4139204F82F8005AA51D /* TimerCountdown */,
 				671C4138204F82F8005AA51D /* Products */,
 			);
@@ -67,6 +73,8 @@
 				671C4145204F82F8005AA51D /* LaunchScreen.storyboard */,
 				671C4148204F82F8005AA51D /* Info.plist */,
 				671C4149204F82F8005AA51D /* main.m */,
+				671C4150204F8DF3005AA51D /* TimeLable.h */,
+				671C4151204F8DF3005AA51D /* TimeLable.m */,
 			);
 			path = TimerCountdown;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6735B0DB204FDCBB00B1C342 /* didi.mp3 in Resources */,
 				671C4147204F82F8005AA51D /* LaunchScreen.storyboard in Resources */,
 				671C4144204F82F8005AA51D /* Assets.xcassets in Resources */,
 				671C4142204F82F8005AA51D /* Main.storyboard in Resources */,
@@ -143,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				671C413F204F82F8005AA51D /* ViewController.m in Sources */,
+				671C4152204F8DF3005AA51D /* TimeLable.m in Sources */,
 				671C414A204F82F8005AA51D /* main.m in Sources */,
 				671C413C204F82F8005AA51D /* AppDelegate.m in Sources */,
 			);
@@ -281,10 +291,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3F3HZPE45;
 				INFOPLIST_FILE = TimerCountdown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jsl.TimerCountdown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -295,10 +306,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3F3HZPE45;
 				INFOPLIST_FILE = TimerCountdown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jsl.TimerCountdown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
